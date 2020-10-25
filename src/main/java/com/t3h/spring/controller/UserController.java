@@ -23,4 +23,10 @@ public class UserController {
     public int addUser(@RequestBody  User user) {
         return userService.save(user);
     }
+
+//    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+    @DeleteMapping("delete/{id}")
+    public int deleteUser(@PathVariable("id") int id) {
+        return userService.delete(id);
+    }
 }
